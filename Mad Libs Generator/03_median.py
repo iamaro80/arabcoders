@@ -1,3 +1,4 @@
+# Mad Libs Generator Project
 # Define a procedure, median, that takes three
 # numbers as its inputs, and returns the median
 # of the three numbers.
@@ -37,10 +38,3 @@ print(median(9,3,6))
 print(median(7,8,7))
 #>>> 7
 print(median(99,82,71))
-
-
-
-
-
-
-

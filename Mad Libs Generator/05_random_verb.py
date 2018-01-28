@@ -1,3 +1,4 @@
+# Mad Libs Generator Project
 # Write code for the function random_verb, which takes in no inputs but outputs
 # one of two verbs randomly. Use the randint function to generate a number from 0-1
 # and return a verb depending on whether the number is equal 0 or 1. Feel free to

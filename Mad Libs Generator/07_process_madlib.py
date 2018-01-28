@@ -33,6 +33,11 @@ def process_madlib(mad_lib):
     # your code here
     # you may find the built-in len function useful for this quiz
     # documentation: https://docs.python.org/2/library/functions.html#len
+    if mad_lib.find('NOUN') >=0:
+        processed = mad_lib.replace('NOUN', word_transformer('NOUN'))
+    if mad_lib.find('VERB') >= 0:
+        processed = processed.replace('VERB', word_transformer('VERB'))
+    return processed
 
 test_string_1 = "This is a good NOUN to use when you VERB your food"
 test_string_2 = "I'm going to VERB to the store and pick up a NOUN or two."

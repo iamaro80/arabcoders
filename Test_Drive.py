@@ -1,5 +1,23 @@
-spy = [0,0,7]
-agent = spy
-spy[2] = agent[2] + 1
+# Define a procedure, replace_spy,
+# that takes as its input a list of
+# three numbers, and modifies the
+# value of the third element in the
+# input list to be one more than its
+# previous value.
 
-print agent[2]
+spy = [0,0,7]
+
+def replace_spy(alist):
+    alist = spy
+    alist[2] = spy[2] + 1
+
+
+
+# In the test below, the first line calls your
+# procedure which will change spy, and the
+# second checks you have changed it.
+# Uncomment the top two lines below.
+
+replace_spy(spy)
+print spy
+#>>> [0,0,8]

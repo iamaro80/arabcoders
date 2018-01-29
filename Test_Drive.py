@@ -1,5 +1,9 @@
-spy = [0,0,7]
-agent = spy
-spy[2] = agent[2] + 1
+def print_all_elements(p):
+    i = 0
+    while i < len(p):
+        print p[i]
+        i = i + 1
 
-print agent[2]
+p = [1,2,3,4]
+
+print_all_elements(p)

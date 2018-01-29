@@ -30,10 +30,16 @@ def word_transformer(word):
 
 def process_madlib(mad_lib):
     processed = ""
-    # your code here
-    # you may find the built-in len function useful for this quiz
-    # documentation: https://docs.python.org/2/library/functions.html#len
-
+    box_size = 4
+    index = 0
+    while index < len(mad_lib):
+        if mad_lib[index:index+box_size] == 'NOUN' or mad_lib[index:index+box_size] == 'VERB':
+            processed += word_transformer(mad_lib[index:index+box_size])+' '
+            index += 4
+        else:
+            processed += mad_lib[index]
+        index += 1
+    return processed
 
 test_string_1 = "This is a good NOUN to use when you VERB your food"
 test_string_2 = "I'm going to VERB to the store and pick up a NOUN or two."

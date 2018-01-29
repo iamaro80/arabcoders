@@ -1,9 +1,17 @@
-# A test Drive file
+# Given the variable,
 
-print 5 / 2
-print 5.0 / 2
-print''
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
 
-speed_in_nano = 299792458 * 100 * 1 / 1000000000
+# define a procedure, how_many_days,
+# that takes as input a number
+# representing a month, and returns
+# the number of days in that month.
 
-print speed_in_nano
+def how_many_days(month_number):
+
+
+#print how_many_days(1)
+#>>> 31
+
+#print how_many_days(9)
+#>>> 30

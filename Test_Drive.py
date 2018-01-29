@@ -1,3 +1,4 @@
+
 # We defined:
 
 stooges = ['Moe','Larry','Curly']

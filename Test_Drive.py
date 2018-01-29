@@ -13,3 +13,5 @@ stooges = ['Moe','Larry','Curly']
 
 # but does not create a new List
 # object.
+stooges[2] = 'Shemp'
+print stooges

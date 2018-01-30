@@ -8,17 +8,14 @@
 # If there is no matching element,
 # return -1.
 
-def find_element(lst, s):
-    index = 0
-    match = False
-    for e in lst:
-        if e == s:
-            match = True
-            index  = lst.index(e)
-    if match == True:
-        return index
-    else:
-        return -1
+def find_element(p,t):
+    i = 0
+    while i < len(p):
+        if p[i] == t:
+            return i
+        i += 1
+    return -1
+
 
 print find_element([1,2,3],3)
 #>>> 2

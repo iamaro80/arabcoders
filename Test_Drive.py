@@ -1,19 +1,27 @@
-# Define a procedure, measure_udacity,
-# that takes as its input a list of strings,
-# and returns a number that is a count
-# of the number of elements in the input
-# list that start with the uppercase
-# letter 'U'.
+# Define a procedure, find_element,
+# that takes as its inputs a list
+# and a value of any type, and
+# returns the index of the first
+# element in the input list that
+# matches the value.
 
-def measure_udacity(lst):
-    no_of_U = 0
+# If there is no matching element,
+# return -1.
+
+def find_element(lst, s):
+    index = 0
+    match = False
     for e in lst:
-        if e[0] == 'U':
-            no_of_U +=1
-    return no_of_U
+        if e == s:
+            match = True
+            index  = lst.index(e)
+    if match == True:
+        return index
+    else:
+        return -1
 
-print measure_udacity(['Dave','Sebastian','Katy'])
-#>>> 0
-
-print measure_udacity(['Umika','Umberto'])
+print find_element([1,2,3],3)
 #>>> 2
+
+print find_element(['alpha','beta'],'gamma')
+#>>> -1

@@ -1,18 +1,31 @@
 # Credit goes to Websten from forums
 #
-# Program defensively:
-#
-# What do you do if your input is invalid? For example what should
-# happen when date 1 is not before date 2?
-#
-# Add an assertion to the code for daysBetweenDates to give
-# an assertion failure when the inputs are invalid. This should
-# occur when the first date is not before the second date.
-#
+# Use Dave's suggestions to finish your daysBetweenDates
+# procedure. It will need to take into account leap years
+# in addition to the correct number of days in each month.
+
+def isLeapYear(year):
+    if year % 4 != 0:
+        return False
+    elif year % 100 != 0:
+        return True
+    elif year % 400 != 0:
+        return False
+    else:
+        return True
+
+def daysInMonth(year, month):
+    #return 30
+    if isLeapYear(year):
+        if month == 2:
+            return 29
+    day = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+    return day[month]
+
 
 def nextDay(year, month, day):
     """Simple version: assume every month has 30 days"""
-    if day < 30:
+    if day < daysInMonth(year, month):
         return year, month, day + 1
     else:
         if month == 12:
@@ -21,8 +34,7 @@ def nextDay(year, month, day):
             return year, month + 1, 1
 
 def dateIsBefore(year1, month1, day1, year2, month2, day2):
-    """Returns True if year1-month1-day1 is before
-       year2-month2-day2. Otherwise, returns False."""
+    """Returns True if year1-month1-day1 is before year2-month2-day2. Otherwise, returns False."""
     if year1 < year2:
         return True
     if year1 == year2:
@@ -37,29 +49,28 @@ def daysBetweenDates(year1, month1, day1, year2, month2, day2):
        and year2/month2/day2. Assumes inputs are valid dates
        in Gregorian calendar."""
     # program defensively! Add an assertion if the input is not valid!
-    assert not dateIsBefore(year2, month2, day2,year1, month1, day1)
+    assert not dateIsBefore(year2, month2, day2, year1, month1, day1)
     days = 0
     while dateIsBefore(year1, month1, day1, year2, month2, day2):
         year1, month1, day1 = nextDay(year1, month1, day1)
         days += 1
     return days
 
+# print nextDay(2018, 2,28), '<<< Test nextDay function >>>'
+#print daysInMonth(1980,2), '          <<< Test daysInMonth function >>>'
+# print isLeapYear(2018),'       <<< Test isLeapYear function >>>'
 def test():
-    test_cases = [((2012,9,30,2012,10,30),30),
-                  ((2012,1,1,2013,1,1),360),
-                  ((2012,9,1,2012,9,4),3),
-                  ((2013,1,1,1999,12,31), "AssertionError")]
+    test_cases = [((2012,1,1,2012,2,28), 58),
+                  ((2012,1,1,2012,3,1), 60),
+                  ((2011,6,30,2012,6,30), 366),
+                  ((2011,1,1,2012,8,8), 585 ),
+                  ((1900,1,1,1999,12,31), 36523)]
 
     for (args, answer) in test_cases:
-        try:
-            result = daysBetweenDates(*args)
-            if result != answer:
-                print "Test with data:", args, "failed"
-            else:
-                print "Test case passed!"
-        except AssertionError:
-            if answer == "AssertionError":
-                print "Nice job! Test case {0} correctly raises AssertionError!\n".format(args)
-            else:
-                print "Check your work! Test case {0} should not raise AssertionError!\n".format(args)
+        result = daysBetweenDates(*args)
+        if result != answer:
+            print "Test with data:", args, "failed"
+        else:
+            print "Test case passed!"
+
 test()

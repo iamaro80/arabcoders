@@ -54,7 +54,7 @@ def greatest(list_of_numbers):
 # Assign list_of_words1 to the split string1 and list_of_words2 to the split string2.
 
 string1 = "Yesterday, PERSON and I went to the PLACE. On our way, we saw a ADJECTIVE NOUN on a bike."
-string2 = "PLACE is located on the ADVERB side of Dublin, near the mainly ADJECTIVE areas of PLACE."
+string2 = "PLACE is located on the ADVERB side of Dublin. near the mainly ADJECTIVE areas of PLACE."
 list_of_words1 = string1.split()
 list_of_words2 = string2.split()
 

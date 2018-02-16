@@ -1,4 +1,4 @@
-# Mini-Project: Secret Message
+ # Mini-Project: Secret Message
 import os
 
 def rename_files():

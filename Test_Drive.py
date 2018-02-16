@@ -1,10 +1,5 @@
-import base64
+import os
 
-x = 'ibc'
-y = 'IBC'
-
-encoded_small   = base64.b64encode(x)
-encoded_cap     = base64.b64encode(y)
-
-print encoded_small
-print encoded_cap
+file_path = os.getcwd()
+print file_path
+os.rename('c')

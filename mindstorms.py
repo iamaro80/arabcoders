@@ -3,8 +3,7 @@ import time
 
 def draw_square():
     window = turtle.Screen()
-    window.bgcolor('#cebbbe')
-
+    window.bgcolor('#ffff80')
     brad = turtle.Turtle()
     brad.forward(100)
     brad.right(90)
@@ -13,8 +12,18 @@ def draw_square():
     brad.forward(100)
     brad.right(90)
     brad.forward(100)
-    brad.right(75)
-
+    # count = 25
+    # while count > 0:
+    #     count -= 1
+    #     print count
+    #     brad.right(75)
+    #     brad.forward(100)
+    #     brad.right(90)
+    #     brad.forward(100)
+    #     brad.right(90)
+    #     brad.forward(100)
+    #     brad.right(90)
+    #     brad.forward(100)
 
 
     window.exitonclick()

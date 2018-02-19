@@ -36,5 +36,4 @@ def art():
     hema.forward(273)
     window.exitonclick()
 
-
 art()

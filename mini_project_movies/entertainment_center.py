@@ -17,4 +17,7 @@ fault_in_our_stars = media.Movie('Fault in our stars',
 
 movies = [terminal, the_man_who_knew_infinity, fault_in_our_stars]
 
-fresh_tomatoes.open_movies_page(movies)
+#fresh_tomatoes.open_movies_page(movies)
+print media.Movie.__doc__
+print media.Movie.__module__
+print media.Movie.__name__
